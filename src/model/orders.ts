@@ -1,6 +1,5 @@
-import { Model, DataTypes, ForeignKey } from "sequelize";
+import { Model, DataTypes } from "sequelize";
 import { sequelize } from "../instances/mysql";
-import { toUSVString } from "util";
 import { aparelhos } from "./aparelhos";
 import { DefTipoServico } from "./defTiporServicos";
 import { clients } from "./clients";
@@ -58,3 +57,5 @@ Orders.belongsTo(clients, {
 Orders.belongsTo(defStatusOrdem, {
     foreignKey: 'idStatus'
 })
+
+clients.hasMany(Orders, { foreignKey: 'idCliente' });

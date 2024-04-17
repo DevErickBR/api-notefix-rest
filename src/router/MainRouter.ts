@@ -1,6 +1,7 @@
 import { Router } from "express";
 import * as homeController from "../controllers/homeController"
 import * as clientsController from "../controllers/clientsController"
+import * as aparelhosController from "../controllers/aparelhosController"
 import dotenv from "dotenv"
 
 dotenv.config()
@@ -18,5 +19,7 @@ router.get("/ping", (req, res) => {
 
 router.get("/clientes", clientsController.Clients)
 router.get("/clientes/cliente/:slug", clientsController.Client)
+
+router.get("/aparelhos", aparelhosController.Aparelhos)
 
 export default router

@@ -1,7 +1,6 @@
 import { Model, DataTypes } from "sequelize";
 import { sequelize } from "../instances/mysql";
 import { defDocumento } from "./defDocumento"
-import { Orders } from "./orders";
 
 interface ClientsInstace extends Model {
     idCliente: number,
@@ -48,5 +47,3 @@ clients.belongsTo(defDocumento, {
     constraints: true,
     foreignKey: 'idTipoDocumento'
 });
-
-clients.hasMany(Orders);
