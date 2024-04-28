@@ -47,3 +47,7 @@ clients.belongsTo(defDocumento, {
     constraints: true,
     foreignKey: 'idTipoDocumento'
 });
+
+clients.hasOne(defDocumento, {
+    foreignKey: 'idTipoDocumento'
+})
