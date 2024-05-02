@@ -29,3 +29,14 @@ export const CreatClient = async (req: Request, res: Response) => {
     );
     res.json({ nomeCliente, telefoneCliente, documentoCliente, emailCliente, idTipoDocumento })
 };
+
+export const DeleteClient = async (req: Request, res: Response) => {
+    let idCliente = req.params.slug
+
+    await clients.destroy({
+        where: {
+            idCliente
+        }
+    })
+
+};
