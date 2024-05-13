@@ -20,8 +20,10 @@ router.get("/ping", (req, res) => {
 
 router.get("/clientes", clientsController.Clients)
 router.post("/clientes", clientsController.CreatClient)
+router.put("/clientes", clientsController.UpdateClient)
 router.get("/clientes/cliente/:slug", clientsController.Client)
 router.delete("/clientes/cliente/:slug", clientsController.DeleteClient)
+
 
 router.get("/aparelhos", aparelhosController.Aparelhos)
 
