@@ -42,20 +42,20 @@ export const DeleteClient = async (req: Request, res: Response) => {
 };
 
 export const UpdateClient = async (req: Request, res: Response) => {
-    let { idCliente, nomeCliente, telefoneCliente, emailCliente, documetoCliente, idTipoDocumento } = req.body
+    let { idCliente, nomeCliente, telefoneCliente, emailCliente, documentoCliente, idTipoDocumento } = req.body
 
     await clients.update({
         idCliente,
         nomeCliente,
         telefoneCliente,
         emailCliente,
-        documetoCliente,
+        documentoCliente,
         idTipoDocumento
     }, {
         where: {
             idCliente
         }
-    }).then((response) => res.json(response)).
+    }).then((response) => res.json({ response, msg: 'Atualizado com sucesso!', nomeCliente })).
         catch(error => res.json({ msgRetorno: 'Erro! consulte todos os campos', error: error }))
 
 
