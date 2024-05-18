@@ -55,8 +55,8 @@ export const UpdateClient = async (req: Request, res: Response) => {
         where: {
             idCliente
         }
-    }).then((response) => res.json({ response, msg: 'Atualizado com sucesso!', nomeCliente })).
-        catch(error => res.json({ msgRetorno: 'Erro! consulte todos os campos', error: error }))
+    }).then((response) => res.json({ response, msg: 'Atualizado com sucesso!' })).
+        catch(error => res.json({ msg: 'Erro! consulte todos os campos', error: error }))
 
 
 }
